@@ -1,0 +1,31 @@
+@use "./../../../../../../src/cores.scss" as *;
+
+.active > .page-link,
+.page-link.active {
+  color: white;
+  background-color: $oab-light;
+  border-color: $oab-light;
+}
+.page-link {
+  color: $oab-light;
+  background-color: white;
+}
+
+
+.disabled > .page-link,
+.page-link.disabled {
+    color: #21252983;
+  background-color: #21252934;
+}
+
+select.sizeseletor{
+    width: 75px;
+}
+
+*.cursorpointer li {
+    cursor: pointer;
+}
+
+*.cursorpointer li.disabled {
+    cursor: default;
+}

@@ -1,0 +1,38 @@
+<div [attr.class]="autoGrid ? '' : 'griddocker'">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col" *ngFor="let coluna of getHeaders()" [attr.class]="coluna.label == 'Ações' ? 'text-center':''">
+          {{ coluna.label }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let linha of getDataModel()">
+        <td *ngFor="let key of getKeys(linha)">
+          {{ getDataRow(linha, key) }}
+        </td>
+
+        <td *ngFor="let key of getKeyAtivo(linha)" class="text-center">
+          <span *ngFor="let icones of icons" class="text-dark">
+            <i [attr.class]="'bi ' + icones.nome + ' me-2 pointer'"></i>
+          </span>
+          <i
+            [attr.class]="'pointer me-2 bi bi-toggle-' + (key ? 'on' : 'off')"
+            *ngIf="showToggle"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-datagrid-footer
+    class="footerCss"
+    [searchTerm]="searchTerm"
+    [qtdeMaxItens]="getMaxItens()"
+    [itemsPerPage]="itemsPerPage"
+    (setQtdeItens)="setQtdeItens($event)"
+    (setPage)="setPage($event)"
+    (calledUpdate)="calledUpdateF($event)"
+  >
+  </app-datagrid-footer>
+</div>

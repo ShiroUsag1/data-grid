@@ -1,0 +1,57 @@
+@use "./../../../../../../src/cores.scss" as *;
+
+.form-select {
+  width: 60px;
+  height: 40px;
+  padding: 0px 8px;
+}
+
+.footer-navbar {
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.table{
+  --bs-table-border-color: #233756;
+  --bs-table-hover-bg: #469ace88;
+}
+
+.table-dark{
+  border-radius: 5px 0px 0px;
+  --bs-table-bg: #233756;
+}
+
+@media (min-width: 900px){
+    .griddocker{
+        display: flex;
+        flex-direction: column;
+        height: 79vh;
+        justify-content: space-between;
+    }
+  }
+
+
+  @media (min-width: 900px) and (min-height: 768px){
+    .griddocker{
+        height: 83vh;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .overflowtable{
+      width: 100%;
+      overflow-x: scroll;
+    }
+  }
+
+  app-datagrid-footer.footerCss {
+    width: 100%;
+  }
+
+  td.phidden {
+    display: none;
+  }
+
+  i.pointer {
+    cursor: pointer;
+  }
